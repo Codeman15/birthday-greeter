@@ -5,8 +5,7 @@ class Birthday
     def initialize(day, month)
       @day = day.to_i
       @month = month
-      @todays_date = nil
-      @birthday = nil
+      @todays_date = Date.today
     end
 
     def string_to_integer
@@ -14,15 +13,20 @@ class Birthday
     end
 
     def birthday
-      @birthday = Date.new(Date.today.year, string_to_integer, @day)
+      Date.new(Date.today.year, string_to_integer.to_i, @day)
     end
 
     def calculation
-      time_until =  birthday - (@todays_date = DateTime.now)
+      time_until =  birthday - @todays_date
       time_until.to_i
     end
 
     def birthday_today?
-      birthday == (@todays_date = Date.today)
+      birthday == @todays_date
     end
 end
+#date = Birthday.new(4, "April")
+#puts date.string_to_integer
+#puts date.birthday
+#puts date.calculation
+#puts date.birthday_today?
