@@ -3,7 +3,7 @@ require 'date'
 class Birthday
   attr_reader :todays_date, :birthday
     def initialize(day, month)
-      @day = day
+      @day = day.to_i
       @month = month
       @todays_date = nil
       @birthday = nil
@@ -18,11 +18,11 @@ class Birthday
     end
 
     def calculation
-      time_until =  @birthday - (@todays_date = DateTime.now)
+      time_until =  birthday - (@todays_date = DateTime.now)
       time_until.to_i
     end
 
     def birthday_today?
-      @birthday == (@todays_date = Date.today)
+      birthday == (@todays_date = Date.today)
     end
 end
