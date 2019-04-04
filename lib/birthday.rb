@@ -25,8 +25,3 @@ class Birthday
       birthday == @todays_date
     end
 end
-#date = Birthday.new(4, "April")
-#puts date.string_to_integer
-#puts date.birthday
-#puts date.calculation
-#puts date.birthday_today?
