@@ -1,7 +1,7 @@
 require 'date'
 
 class Birthday
-  attr_reader :todays_date, :birthday
+  attr_reader :todays_date
     def initialize(day, month)
       @day = day.to_i
       @month = month
